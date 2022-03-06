@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	@include flex-center;
+	gap: 0.5rem;
+	* {
+		font-size: 2rem;
+	}
+}
+
+.recipe-list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	row-gap: 1rem;
+	column-gap: 0.5rem;
+}
