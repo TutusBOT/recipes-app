@@ -13,19 +13,9 @@ function RecipeForm({ getData, setRecievedData }) {
 			setIngredients("");
 			return;
 		} else {
-			const mappedIngredients = splitted.filter((splIngr, index) => {
+			const mappedIngredients = splitted.filter((splIngr) => {
 				console.log("chuuuuj", splIngr, ingredientToDelete);
 				console.log(splitted.length);
-				// if (splIngr !== ingredientToDelete) {
-				// 	// console.log("inside", splitted.length, index);
-				// 	// if (splitted.length - 1 === index || splitted.length === 2) {
-				// 	// 	console.log("index", index);
-				// 	// 	console.log("dlugosc", splitted.length);
-				// 	// 	return splIngr;
-				// 	// }
-				// 	// console.log("returnuje z plusem");
-				// 	return splIngr + "+";
-				// } else return null;
 				return splIngr !== ingredientToDelete;
 			});
 			console.log(mappedIngredients);
@@ -42,11 +32,9 @@ function RecipeForm({ getData, setRecievedData }) {
 			console.log(
 				filteredIngredients[filteredIngredients.length - 1].slice(0, -1)
 			);
-			// setIngredients(filteredIngredients.toString);
 			console.log("filt", filteredIngredients);
 			setIngredients(formattedIngredients.toString());
 		}
-		// console.log(splitted);
 	}
 
 	function handleSubmit(e) {
