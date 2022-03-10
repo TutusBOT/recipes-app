@@ -1,11 +1,22 @@
 import React from "react";
 
-function AddedIngredients({ ingredients }) {
+function AddedIngredients({ ingredients, deleteIngredient }) {
 	const splittedIngredients = ingredients.split("+,");
 	return (
-		<div>
+		<div className="ingredients-added">
 			{splittedIngredients.map((ingredient) => {
-				return <div>{ingredient}</div>;
+				return (
+					<div key={ingredient}>
+						{ingredient}{" "}
+						<button
+							onClick={() => {
+								deleteIngredient(ingredient);
+							}}
+						>
+							x
+						</button>
+					</div>
+				);
 			})}
 		</div>
 	);

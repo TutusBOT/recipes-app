@@ -9,17 +9,80 @@ img {
   max-width: 100%;
 }
 
+.search-bar,
+.recipe-list {
+  padding-inline: 0.5rem;
+}
+
 .search-bar {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   gap: 0.5rem;
 }
 .search-bar * {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.search-bar input {
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+  border: 2px solid #000;
+}
+.search-bar input:focus, .search-bar input:active {
+  outline: none;
+  border: 2px solid #32a848;
+}
+@media (min-width: 1024px) {
+  .search-bar * {
+    font-size: 2rem;
+  }
+}
+
+.ingredients-added {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.25em;
+}
+.ingredients-added div {
+  color: white;
+  background-color: #32a848;
+  padding-block: 0.25em;
+  padding-inline: 1rem;
+  border-radius: 1em;
+}
+.ingredients-added div button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  border-radius: 0.5em;
+}
+
+.button-add {
+  border: 2px solid #32a848;
+  color: #32a848;
+  background-color: #fff;
+}
+.button-add:hover {
+  background-color: #f7f7f7;
+}
+
+.button-search {
+  background-color: #32a848;
+  color: white;
+}
+.button-search:hover {
+  background-color: #2e9c43;
 }
 
 .recipe-list {
@@ -27,6 +90,101 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 1rem;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.recipe-list > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  box-shadow: 0 0 0.5em #000;
+  border-radius: 0.5em;
+  text-align: center;
+}
+.recipe-list > li > h1 {
+  color: #32a848;
+}
+
+.recipe-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  background-color: #32a848;
+  border-radius: 1em;
+  padding-inline: 1em;
+  text-align: center;
+  color: white;
+  overflow-y: auto;
+}
+.recipe-details h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+@media (min-width: 1400px) {
+  .recipe-details {
+    width: 50%;
+    height: 90%;
+  }
+  .recipe-details h1 {
+    font-size: 2rem;
+  }
+}
+
+.closer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.closer-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  color: #32a848;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: #fff;
+}
+.closer-button:hover {
+  background-color: #f7f7f7;
+}
+
+.recipe-details-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+  line-height: 1.5;
+}
+.recipe-details-wrapper h1 {
+  text-align: center;
+}
+.recipe-details-wrapper h3 {
+  width: 100%;
+  text-align: left;
+}
+
+.recipe-steps,
+.recipe-ingredients {
+  width: 100%;
+  padding-inline: 1rem;
+}
+.recipe-steps li,
+.recipe-ingredients li {
+  width: 100%;
+  text-align: left;
+  list-style: disc !important;
 }/*# sourceMappingURL=index.css.map */

@@ -3,7 +3,8 @@
 function SearchBar({ currentIngredient, setCurrentIngredient }) {
 	return (
 		<input
-			placeholder="Search for recipe by ingredients:"
+			size={1}
+			placeholder="Ingredient"
 			type="text"
 			value={currentIngredient}
 			onChange={(e) => {
