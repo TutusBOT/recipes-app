@@ -50,6 +50,9 @@ $breakpoint-small: "768px";
 			font-size: 2rem;
 		}
 	}
+	@media (max-width: $breakpoint-small) {
+		// grid-template-rows: 2fr 1fr 1fr;
+	}
 }
 
 .ingredients-added {
@@ -57,7 +60,14 @@ $breakpoint-small: "768px";
 	justify-content: start;
 	align-items: center;
 	gap: 0.25em;
+	background-color: #dddddd;
+	border-radius: 0.25em;
+	padding: 0.25rem;
 	div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.25em;
 		color: white;
 		background-color: $color-main;
 		padding-block: 0.25em;
@@ -69,6 +79,12 @@ $breakpoint-small: "768px";
 			border: none;
 			color: white;
 		}
+	}
+	@media (max-width: $breakpoint-small) {
+		// grid-area: 2/1/4/2;
+		// align-self: start;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(10ch, 0.75fr));
 	}
 }
 

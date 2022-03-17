@@ -11,8 +11,7 @@ function Recipe({ recipe }) {
 		setExpanded(false);
 	}
 	async function getRecipeDetails(id) {
-		const key = "16cf700b1f6247ee9272ac0a756d641c";
-		const url = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${key}`;
+		const url = `https://bartlomiej-tutak.pl/projekty/recipe-app/getRecipeInstructions.php?id=${id}`;
 		try {
 			const response = await axios.get(url);
 			const recipeSteps = response.data[0].steps.map((step) => {

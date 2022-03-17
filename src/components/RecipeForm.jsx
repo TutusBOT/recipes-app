@@ -57,6 +57,7 @@ function RecipeForm({ getData, setRecievedData }) {
 						setIngredients(`${ingredients}+,${currentIngredient}`);
 					}
 					setCurrentIngredient("");
+					console.log(ingredients);
 				}}
 			>
 				Add ingredient
@@ -68,7 +69,7 @@ function RecipeForm({ getData, setRecievedData }) {
 					deleteIngredient={deleteIngredient}
 				/>
 			) : (
-				<div></div>
+				<div className="ingredients-added"></div>
 			)}
 			<button
 				className="button button-search"

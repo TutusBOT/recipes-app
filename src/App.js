@@ -2,15 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import RecipeForm from "./components/RecipeForm";
 import RecipeList from "./components/RecipeList";
-import SearchBar from "./components/SearchBar";
-
-console.log();
 
 async function getData(ingredients) {
-	const { REACT_APP_API_KEY } = process.env;
-	const key = "16cf700b1f6247ee9272ac0a756d641c";
-	console.log(key);
-	const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${key}&ingredients=${ingredients}`;
+	const url = `https://bartlomiej-tutak.pl/projekty/recipe-app/getRecipeByIngr.php?ingredients=${ingredients}`;
 	try {
 		const response = await axios.get(url);
 		const listOfRecipes = response.data.map((recipe) => {
@@ -20,7 +14,7 @@ async function getData(ingredients) {
 		console.log("lista", listOfRecipes);
 		return listOfRecipes;
 	} catch {
-		console.log("err");
+		console.log("error");
 	}
 }
 
@@ -33,7 +27,7 @@ function App() {
 	return (
 		<>
 			<RecipeForm getData={getData} setRecievedData={setRecievedData} />
-			{console.log(recievedData)}
+			{/* {console.log(recievedData)} */}
 			{/* {recievedData.length
 				? recievedData.map((recipe) => {
 						return <>{recipe.title}</>;
