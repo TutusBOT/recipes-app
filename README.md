@@ -1,6 +1,6 @@
 # Recipe app
 
-App created with usage of React, SCSS, spoonacular API and PHP as a backend.
+App created with usage of React, SCSS, spoonacular API and PHP as a backend. [Live version](https://bartlomiej-tutak.pl/projekty/recipe-app/)
 
 ## This web app allows user to search for recipes by the ingredients used in them. 
 
